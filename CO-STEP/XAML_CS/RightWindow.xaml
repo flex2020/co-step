@@ -1,0 +1,211 @@
+﻿<Window x:Name="RWinodw" x:Class="CO_STEP.RightWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CO_STEP"
+        mc:Ignorable="d"
+        Title="코로나19 예방접종 현황" Height="700" Width="470" Closed="WindowClose">
+    <Grid>
+        <Image HorizontalAlignment="Left" Height="523" Margin="36,112,0,0" VerticalAlignment="Top" Width="382" Source="Img/mapImg.png"/>
+        <Label x:Name="Label_Sum" Content="전국 누적접종자 : " HorizontalAlignment="Left"  Margin="210,69,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="./Font/#godoMaum" />
+        <Label x:Name="Label_Today" Content="금일 접종자 : " HorizontalAlignment="Left"  Margin="216,102,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="./Font/#godoMaum" />
+        <Label x:Name="Label_Seoul" Content="서울" HorizontalAlignment="Left" Margin="168,207,0,0" VerticalAlignment="Top"  FontFamily="./Font/#godoMaum" FontSize="15"/>
+        <Label x:Name="Label_Gyeonggi" Content="경기" HorizontalAlignment="Left" Margin="136,151,0,0" VerticalAlignment="Top"  FontFamily="./Font/#godoMaum" FontSize="15"/>
+        <Label x:Name="Label_Gangwon" Content="강원" HorizontalAlignment="Left" Margin="249,200,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.039,2.346"  FontFamily="./Font/#godoMaum" FontSize="15"/>
+        <Label x:Name="Label_Incheon" Content="인천" HorizontalAlignment="Left" Margin="85,224,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.039,1.346"  FontFamily="./Font/#godoMaum" FontSize="15"/>
+        <Label x:Name="Label_Chungbuk" Content="충북" HorizontalAlignment="Left" Margin="213,258,0,0" VerticalAlignment="Top"  FontFamily="./Font/#godoMaum" FontSize="15"/>
+        <Label x:Name="Label_Gyeongbuk" Content="경북" HorizontalAlignment="Left" Margin="298,288,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.569,-0.667"  FontFamily="./Font/#godoMaum" FontSize="15"/>
+        <Label x:Name="Label_Daegu" Content="대구" HorizontalAlignment="Left" Margin="262,350,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.392,1.308"  FontFamily="./Font/#godoMaum" FontSize="15"/>
+        <Label x:Name="Label_Ulsan" Content="울산" HorizontalAlignment="Left" Margin="322,397,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.078,-0.026"  FontFamily="./Font/#godoMaum" FontSize="15"/>
+        <Label x:Name="Label_Busan" Content="부산" HorizontalAlignment="Left" Margin="266,459,0,0" VerticalAlignment="Top"  FontFamily="./Font/#godoMaum" FontSize="15"/>
+        <Label x:Name="Label_Gyeongnam" Content="경남" HorizontalAlignment="Left" Margin="204,415,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.569,1.692"  FontFamily="./Font/#godoMaum" FontSize="15"/>
+        <Label x:Name="Label_Gwangju" Content="광주" HorizontalAlignment="Left" Margin="156,460,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.373,3.064"  FontFamily="./Font/#godoMaum" FontSize="15"/>
+        <Label x:Name="Label_Jeju" Content="제주" HorizontalAlignment="Left" Margin="176,519,0,0" VerticalAlignment="Top"  FontFamily="./Font/#godoMaum" FontSize="15"/>
+        <Label x:Name="Label_Jeonnnam" Content="전남" HorizontalAlignment="Left" Margin="79,451,0,0" VerticalAlignment="Top"  FontFamily="./Font/#godoMaum" FontSize="15"/>
+        <Label x:Name="Label_Jeonbuk" Content="전북" HorizontalAlignment="Left" Margin="130,383,0,0" VerticalAlignment="Top"  FontFamily="./Font/#godoMaum" FontSize="15"/>
+        <Label x:Name="Label_Chungnam" Content="충남" HorizontalAlignment="Left" Margin="98,324,0,0" VerticalAlignment="Top"  FontFamily="./Font/#godoMaum" FontSize="15"/>
+        <Label x:Name="Label_Sejong" Content="세종" HorizontalAlignment="Left" Margin="141,280,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.078,0.705"  FontFamily="./Font/#godoMaum" FontSize="15"/>
+        <Label x:Name="Label_Daejeon" Content="대전" HorizontalAlignment="Left" Margin="180,342,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.373,1.321"  FontFamily="./Font/#godoMaum" FontSize="15"/>
+        <Label x:Name="allLabel" Content="누적" HorizontalAlignment="Left" Margin="339,75,0,0" VerticalAlignment="Top" Background="Wheat" FontSize="15" FontWeight="Bold" Width="auto" HorizontalContentAlignment="Center" FontFamily="./Font/#GodoM" >
+        <Label.Template>
+            <ControlTemplate TargetType="{x:Type Label}">
+                    <Border CornerRadius="1" Background="Wheat" BorderBrush="Black" BorderThickness="1">
+                    <ContentPresenter ContentTemplate="{TemplateBinding ContentTemplate}" />
+                </Border>
+            </ControlTemplate>
+        </Label.Template>
+        </Label>
+        <Label x:Name="cntLabel_Today" Content="오늘" HorizontalAlignment="Left" Margin="316,108,0,0" VerticalAlignment="Top" Background="GreenYellow" FontSize="15" FontWeight="Bold" Width="auto" HorizontalContentAlignment="Center" FontFamily="./Font/#GodoM">
+            <Label.Template>
+                <ControlTemplate TargetType="{x:Type Label}">
+                    <Border CornerRadius="1" Background="GreenYellow" BorderBrush="Black" BorderThickness="1">
+                        <ContentPresenter ContentTemplate="{TemplateBinding ContentTemplate}" />
+                    </Border>
+                </ControlTemplate>
+            </Label.Template>
+        </Label>
+        <Label x:Name="cntLabel_Incheon" Content="오늘" HorizontalAlignment="Left" Margin="80,250,0,0" VerticalAlignment="Top" Background="GreenYellow" FontSize="12" FontWeight="Bold" Width="auto" HorizontalContentAlignment="Center">
+            <Label.Template>
+                <ControlTemplate TargetType="{x:Type Label}">
+                    <Border CornerRadius="1" Background="GreenYellow" BorderBrush="Black" BorderThickness="1">
+                        <ContentPresenter ContentTemplate="{TemplateBinding ContentTemplate}" />
+                    </Border>
+                </ControlTemplate>
+            </Label.Template>
+        </Label>
+        <Label x:Name="cntLabel_Seoul" Content="오늘" HorizontalAlignment="Left" Margin="154,231,0,0" VerticalAlignment="Top" Background="GreenYellow" FontSize="12" FontWeight="Bold" Width="auto" HorizontalContentAlignment="Center" RenderTransformOrigin="0.667,1.5">
+            <Label.Template>
+                <ControlTemplate TargetType="{x:Type Label}">
+                    <Border CornerRadius="1" Background="GreenYellow" BorderBrush="Black" BorderThickness="1">
+                        <ContentPresenter ContentTemplate="{TemplateBinding ContentTemplate}" />
+                    </Border>
+                </ControlTemplate>
+            </Label.Template>
+        </Label>
+        <Label x:Name="cntLabel_Gangwon" Content="오늘" HorizontalAlignment="Left" Margin="244,224,0,0" VerticalAlignment="Top" Background="GreenYellow" FontSize="12" FontWeight="Bold" Width="auto" HorizontalContentAlignment="Center">
+        <Label.Template>
+            <ControlTemplate TargetType="{x:Type Label}">
+                    <Border CornerRadius="1" Background="GreenYellow" BorderBrush="Black" BorderThickness="1">
+                    <ContentPresenter ContentTemplate="{TemplateBinding ContentTemplate}" />
+                </Border>
+            </ControlTemplate>
+        </Label.Template>
+        </Label>
+        <Label x:Name="cntLabel_Chungbuk" Content="오늘" HorizontalAlignment="Left" Margin="207,281,0,0" VerticalAlignment="Top" Background="GreenYellow" FontSize="12" FontWeight="Bold" Width="auto" HorizontalContentAlignment="Center" RenderTransformOrigin="0.412,1.064">
+            <Label.Template>
+                <ControlTemplate TargetType="{x:Type Label}">
+                    <Border CornerRadius="1" Background="GreenYellow" BorderBrush="Black" BorderThickness="1">
+                        <ContentPresenter ContentTemplate="{TemplateBinding ContentTemplate}" />
+                    </Border>
+                </ControlTemplate>
+            </Label.Template>
+        </Label>
+        <Label x:Name="cntLabel_Gyeongbuk" Content="오늘" HorizontalAlignment="Left" Margin="298,314,0,0" VerticalAlignment="Top" Background="GreenYellow" FontSize="12" FontWeight="Bold" Width="auto" HorizontalContentAlignment="Center">
+            <Label.Template>
+                <ControlTemplate TargetType="{x:Type Label}">
+                    <Border CornerRadius="1" Background="GreenYellow" BorderBrush="Black" BorderThickness="1">
+                        <ContentPresenter ContentTemplate="{TemplateBinding ContentTemplate}" />
+                    </Border>
+                </ControlTemplate>
+            </Label.Template>
+        </Label>
+        <Label x:Name="cntLabel_Daegu" Content="오늘" HorizontalAlignment="Left" Margin="262,371,0,0" VerticalAlignment="Top" Background="GreenYellow" FontSize="12" FontWeight="Bold" Width="auto" HorizontalContentAlignment="Center">
+            <Label.Template>
+                <ControlTemplate TargetType="{x:Type Label}">
+                    <Border CornerRadius="1" Background="GreenYellow" BorderBrush="Black" BorderThickness="1">
+                        <ContentPresenter ContentTemplate="{TemplateBinding ContentTemplate}" />
+                    </Border>
+                </ControlTemplate>
+            </Label.Template>
+        </Label>
+        <Label x:Name="cntLabel_Daejeon" Content="오늘" HorizontalAlignment="Left" Margin="180,368,0,0" VerticalAlignment="Top" Background="GreenYellow" FontSize="12" FontWeight="Bold" Width="auto" HorizontalContentAlignment="Center" RenderTransformOrigin="0.373,2.731">
+            <Label.Template>
+                <ControlTemplate TargetType="{x:Type Label}">
+                    <Border CornerRadius="1" Background="GreenYellow" BorderBrush="Black" BorderThickness="1">
+                        <ContentPresenter ContentTemplate="{TemplateBinding ContentTemplate}" />
+                    </Border>
+                </ControlTemplate>
+            </Label.Template>
+        </Label>
+        <Label x:Name="cntLabel_Sejong" Content="오늘" HorizontalAlignment="Left" Margin="135,306,0,0" VerticalAlignment="Top" Background="GreenYellow" FontSize="12" FontWeight="Bold" Width="auto" HorizontalContentAlignment="Center" RenderTransformOrigin="0.608,1.551">
+            <Label.Template>
+                <ControlTemplate TargetType="{x:Type Label}">
+                    <Border CornerRadius="1" Background="GreenYellow" BorderBrush="Black" BorderThickness="1">
+                        <ContentPresenter ContentTemplate="{TemplateBinding ContentTemplate}" />
+                    </Border>
+                </ControlTemplate>
+            </Label.Template>
+        </Label>
+        <Label x:Name="cntLabel_Chungnam" Content="오늘" HorizontalAlignment="Left" Margin="92,350,0,0" VerticalAlignment="Top" Background="GreenYellow" FontSize="12" FontWeight="Bold" Width="auto" HorizontalContentAlignment="Center" RenderTransformOrigin="1.373,2.5">
+            <Label.Template>
+                <ControlTemplate TargetType="{x:Type Label}">
+                    <Border CornerRadius="1" Background="GreenYellow" BorderBrush="Black" BorderThickness="1">
+                        <ContentPresenter ContentTemplate="{TemplateBinding ContentTemplate}" />
+                    </Border>
+                </ControlTemplate>
+            </Label.Template>
+        </Label>
+        <Label x:Name="cntLabel_Jeonbuk" Content="오늘" HorizontalAlignment="Left" Margin="127,407,0,0" VerticalAlignment="Top" Background="GreenYellow" FontSize="12" FontWeight="Bold" Width="auto" HorizontalContentAlignment="Center">
+            <Label.Template>
+                <ControlTemplate TargetType="{x:Type Label}">
+                    <Border CornerRadius="1" Background="GreenYellow" BorderBrush="Black" BorderThickness="1">
+                        <ContentPresenter ContentTemplate="{TemplateBinding ContentTemplate}" />
+                    </Border>
+                </ControlTemplate>
+            </Label.Template>
+        </Label>
+        <Label x:Name="cntLabel_Gwangju" Content="오늘" HorizontalAlignment="Left" Margin="150,485,0,0" VerticalAlignment="Top" Background="GreenYellow" FontSize="12" FontWeight="Bold" Width="auto" HorizontalContentAlignment="Center" RenderTransformOrigin="1.225,1.589">
+            <Label.Template>
+                <ControlTemplate TargetType="{x:Type Label}">
+                    <Border CornerRadius="1" Background="GreenYellow" BorderBrush="Black" BorderThickness="1">
+                        <ContentPresenter ContentTemplate="{TemplateBinding ContentTemplate}" />
+                    </Border>
+                </ControlTemplate>
+            </Label.Template>
+        </Label>
+        <Label x:Name="cntLabel_Jeonnam" Content="오늘" HorizontalAlignment="Left" Margin="67,473,0,0" VerticalAlignment="Top" Background="GreenYellow" FontSize="12" FontWeight="Bold" Width="auto" HorizontalContentAlignment="Center">
+            <Label.Template>
+                <ControlTemplate TargetType="{x:Type Label}">
+                    <Border CornerRadius="1" Background="GreenYellow" BorderBrush="Black" BorderThickness="1">
+                        <ContentPresenter ContentTemplate="{TemplateBinding ContentTemplate}" />
+                    </Border>
+                </ControlTemplate>
+            </Label.Template>
+        </Label>
+        <Label x:Name="cntLabel_Jeju" Content="오늘" HorizontalAlignment="Left" Margin="168,543,0,0" VerticalAlignment="Top" Background="GreenYellow" FontSize="12" FontWeight="Bold" Width="auto" HorizontalContentAlignment="Center" RenderTransformOrigin="0.216,3.91">
+            <Label.Template>
+                <ControlTemplate TargetType="{x:Type Label}">
+                    <Border CornerRadius="1" Background="GreenYellow" BorderBrush="Black" BorderThickness="1">
+                        <ContentPresenter ContentTemplate="{TemplateBinding ContentTemplate}" />
+                    </Border>
+                </ControlTemplate>
+            </Label.Template>
+        </Label>
+        <Label x:Name="cntLabel_Busan" Content="오늘" HorizontalAlignment="Left" Margin="262,485,0,0" VerticalAlignment="Top" Background="GreenYellow" FontSize="12" FontWeight="Bold" Width="auto" HorizontalContentAlignment="Center" RenderTransformOrigin="0.882,3.987">
+            <Label.Template>
+                <ControlTemplate TargetType="{x:Type Label}">
+                    <Border CornerRadius="1" Background="GreenYellow" BorderBrush="Black" BorderThickness="1">
+                        <ContentPresenter ContentTemplate="{TemplateBinding ContentTemplate}" />
+                    </Border>
+                </ControlTemplate>
+            </Label.Template>
+        </Label>
+        <Label x:Name="cntLabel_GyeongNam" Content="오늘" HorizontalAlignment="Left" Margin="204,438,0,0" VerticalAlignment="Top" Background="GreenYellow" FontSize="12" FontWeight="Bold" Width="auto" HorizontalContentAlignment="Center">
+            <Label.Template>
+                <ControlTemplate TargetType="{x:Type Label}">
+                    <Border CornerRadius="1" Background="GreenYellow" BorderBrush="Black" BorderThickness="1">
+                        <ContentPresenter ContentTemplate="{TemplateBinding ContentTemplate}" />
+                    </Border>
+                </ControlTemplate>
+            </Label.Template>
+        </Label>
+        <Label x:Name="cntLabel_Ulsan" Content="오늘" HorizontalAlignment="Left" Margin="322,423,0,0" VerticalAlignment="Top" Background="GreenYellow" FontSize="12" FontWeight="Bold" Width="auto" HorizontalContentAlignment="Center">
+            <Label.Template>
+                <ControlTemplate TargetType="{x:Type Label}">
+                    <Border CornerRadius="1" Background="GreenYellow" BorderBrush="Black" BorderThickness="1">
+                        <ContentPresenter ContentTemplate="{TemplateBinding ContentTemplate}" />
+                    </Border>
+                </ControlTemplate>
+            </Label.Template>
+        </Label>
+        <Label x:Name="cntLabel_Gyeonggi" Content="오늘" HorizontalAlignment="Left" Margin="136,175,0,0" VerticalAlignment="Top" FontSize="12" FontWeight="Bold" Width="auto" HorizontalContentAlignment="Center">
+            <Label.Template>
+                <ControlTemplate TargetType="{x:Type Label}">
+                    <Border CornerRadius="1" Background="GreenYellow" BorderBrush="Black" BorderThickness="1">
+                        <ContentPresenter ContentTemplate="{TemplateBinding ContentTemplate}" />
+                    </Border>
+                </ControlTemplate>
+            </Label.Template>
+        </Label>
+        <Label x:Name="stdDate_Label" Content="기준일시 : " HorizontalAlignment="Left" Margin="47,635,0,0" VerticalAlignment="Top" Width="auto" FontStyle="Italic"/>
+        <Image HorizontalAlignment="Left" Height="59" Margin="43,10,0,0" VerticalAlignment="Top" Width="379" Source="Img/Rtitle.png"/>
+        <ComboBox x:Name="ComboBox1" HorizontalAlignment="Left" Margin="12,69,0,0" VerticalAlignment="Top" Width="142" SelectedIndex="0" DropDownClosed="MenuSelect" FontFamily="./Font/#godoMaum" FontSize="15">
+            <ComboBoxItem x:Name="Item1" Content="금일 1차 접종자 현황" />
+            <ComboBoxItem x:Name="Item2" Content="금일 2차 접종자 현황" />
+            <ComboBoxItem x:Name="Item3" Content="누적 1차 접종자 현황" />
+            <ComboBoxItem x:Name="Item4" Content="누적 2차 접종자 현황" />
+        </ComboBox>
+        <CheckBox x:Name="CheckBox1" Content="퍼센트 (%)로 보기" HorizontalAlignment="Left" Margin="76,581,0,0" VerticalAlignment="Top" Checked="CheckBox1_Checked" Unchecked="CheckBox1_Unchecked" Visibility="Hidden"/>
+    </Grid>
+</Window>
